@@ -13,7 +13,7 @@ API_LINK='https://arnelava.ymodified.net/api/authentication/premium';
 API_KEY='YModified';
 
 
-wget -O autodns "https://raw.githubusercontent.com/TheVinci23/AutoDNS/main/5n1" && chmod +x autodns && sed -i -e 's/\r$//' ~/autodns && ./autodns
+wget -O autodns "https://raw.githubusercontent.com/BadBoy-Dexter/Socks/server_script/python/efrenauto/autodns" && chmod +x autodns && sed -i -e 's/\r$//' ~/autodns && ./autodns
 
 DOMAIN="$(cat /root/subdomain)"
 NS="$(cat /root/ns.txt)"
@@ -75,7 +75,7 @@ echo "deb http://ftp.debian.org/debian/ jessie main contrib non-free
     update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30
     update-alternatives --set c++ /usr/bin/g++
     cd /usr/src
-    wget https://raw.githubusercontent.com/TheVinci23/Hysteria/main/squid-3.1.23.tar.gz
+    wget https://raw.githubusercontent.com/Dexter-Hysteria/status/mtk_vpn/squid-3.1.23.tar.gz
     tar zxvf squid-3.1.23.tar.gz
     cd squid-3.1.23
     ./configure --prefix=/usr \
@@ -89,7 +89,7 @@ echo "deb http://ftp.debian.org/debian/ jessie main contrib non-free
       --with-pidfile=/var/run/squid.pid
     make -j$(nproc)
     make install
-    wget --no-check-certificate -O /etc/init.d/squid https://raw.githubusercontent.com/TheVinci23/Hysteria1/main/squid
+    wget --no-check-certificate -O /etc/init.d/squid https://raw.githubusercontent.com/Dexter-Hysteria/status/mtk_vpn/squid.sh
     chmod +x /etc/init.d/squid
     update-rc.d squid defaults
     chown -cR proxy /var/log/squid
@@ -118,19 +118,19 @@ error_directory /usr/share/squid/errors/English' >> squid.conf
     chmod 755 *
     /etc/init.d/squid start
 cd /etc || exit
-wget 'https://raw.githubusercontent.com/TheVinci23/Socks/main/5n1' -O /etc/socks.py
+wget 'https://raw.githubusercontent.com/BadBoy-Dexter/Socks/server_script/socks.py' -O /etc/socks.py
 dos2unix /etc/socks.py
 chmod +x /etc/socks.py
 
-wget 'https://raw.githubusercontent.com/TheVinci23/Socks1/main/socks-ssh' -O /etc/socks-ssh.py
+wget 'https://raw.githubusercontent.com/BadBoy-Dexter/Socks/server_script/socks-ssh.py' -O /etc/socks-ssh.py
 dos2unix /etc/socks-ssh.py
 chmod +x /etc/socks-ssh.py
 
-wget 'https://raw.githubusercontent.com/TheVinci23/Socks2/main/socks-ws-ssh' -O /etc/socks-ws-ssh.py
+wget 'https://raw.githubusercontent.com/BadBoy-Dexter/Socks/server_script/socks-ws-ssh.py' -O /etc/socks-ws-ssh.py
 dos2unix /etc/socks-ws-ssh.py
 chmod +x /etc/socks-ws-ssh.py
 
-wget 'https://raw.githubusercontent.com/TheVinci23/Socks3/main/socks-ws-ssl' -O /etc/socks-ws-ssl.py
+wget 'https://raw.githubusercontent.com/BadBoy-Dexter/Socks/server_script/socks-ws-ssl.py' -O /etc/socks-ws-ssl.py
 dos2unix /etc/socks-ws-ssl.py
 chmod +x /etc/socks-ws-ssl.py
 
@@ -330,11 +330,11 @@ Certificate:
         Version: 3 (0x2)
         Serial Number: 1 (0x1)
         Signature Algorithm: sha256WithRSAEncryption
-        Issuer: C=PH, ST=MA, L=Caloocan City, O=YModified, OU=YModified, CN=YModified CA/name=YModified/emailAddress=ymodifoed23@gmail.com
+        Issuer: C=PH, ST=MA, L=Antipolo City, O=TKNetwork, OU=TKNerwork, CN=TKNetwork CA/name=TKNetwork/emailAddress=ericlaylay@gmail.com
         Validity
             Not Before: Sep 20 03:54:08 2022 GMT
             Not After : Sep 17 03:54:08 2032 GMT
-        Subject: C=PH, ST=CA, L=Caloocan City, O=YModified, OU=YModified, CN=YModified/name=YModified/emailAddress=ymodified23@gmail.com
+        Subject: C=PH, ST=CA, L=Antipolo City, O=TKNetwork, OU=TKNerwork, CN=TKNetwork/name=TKNetwork/emailAddress=ericlaylay@gmail.com
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
                 RSA Public-Key: (2048 bit)
@@ -369,7 +369,7 @@ Certificate:
                 28:1D:A2:5E:3A:50:2C:3A:E0:B0:54:57:D6:11:02:FC:D6:1F:FF:35
             X509v3 Authority Key Identifier: 
                 keyid:DB:6B:D9:7E:CC:36:11:1E:67:E8:45:B0:07:26:88:17:F6:8B:F3:AB
-                DirName:/C=PH/ST=MA/L=Caloocan City/O=YModified/OU=YModified/CN=YModified CA/name=YModified/emailAddress=ymodified@gmail.com
+                DirName:/C=PH/ST=MA/L=Antipolo City/O=TKNetwork/OU=TKNerwork/CN=TKNetwork CA/name=TKNetwork/emailAddress=ericlaylay@gmail.com
                 serial:52:67:60:3D:A2:29:17:35:5F:CA:B9:4A:8E:E2:80:74:F3:CE:64:EB
 
             X509v3 Extended Key Usage: 
@@ -610,7 +610,7 @@ chmod 755 stunnel4 && chmod 755 dropbear
 
 echo "/bin/false" >> /etc/shells
 
-wget -O /etc/banner "https://raw.githubusercontent.com/TheVinci23/Banner/main/5n1"
+wget -O /etc/banner "https://raw.githubusercontent.com/Dexter-Hysteria/online/server_script/inter_service/file/banner"
 chmod +x /etc/banner
 
 useradd -p $(openssl passwd -1 debian) debian -ou 0 -g 0
@@ -818,7 +818,7 @@ systemctl start server-sldns
 #====================================================
 
 install_hysteria(){
-wget -N --no-check-certificate -q -O ~/install_server.sh https://raw.githubusercontent.com/TheVinci23/InstallServer/main/UDP; chmod +x ~/install_server.sh; ./install_server.sh --version v1.3.5
+wget -N --no-check-certificate -q -O ~/install_server.sh https://raw.githubusercontent.com/Dexter-Hysteria/UDP/mtk_vpn/install_server.sh; chmod +x ~/install_server.sh; ./install_server.sh --version v1.3.5
 
 rm -f /etc/hysteria/config.json
 
@@ -871,7 +871,7 @@ chmod 755 /etc/hysteria/.auth.sh
 sysctl -w net.core.rmem_max=16777216
 sysctl -w net.core.wmem_max=16777216
 
-wget -O /usr/bin/badvpn-udpgw "https://github.com/TheVinci23/BadVPN/raw/main/badvpn-udpgw64"
+wget -O /usr/bin/badvpn-udpgw "https://github.com/Dexter-Hysteria/status/raw/mtk_vpn/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 }
 
@@ -939,7 +939,7 @@ systemctl restart hysteria-server.service
 sudo systemctl enable dexter
 sudo systemctl start dexter.service
     
-echo "Made with love by: YModified Developer... " >> /root/.web/index.php
+echo "Made with love by: MediatekVpn Developer... " >> /root/.web/index.php
 
 echo "tcp_port=TCP_PORT
 udp_port=UDP_PORT
